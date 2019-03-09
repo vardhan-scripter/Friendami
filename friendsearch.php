@@ -1,4 +1,5 @@
 <?php
+session_start();
 $search=$_POST['search'];
 if ($search!='') {	
 	$conn = mysqli_connect('localhost','root','','chatapplication') or die('could not connect');
@@ -6,7 +7,9 @@ if ($search!='') {
 	$row = mysqli_query($conn,$query);
 	if(mysqli_num_rows($row) == 1){
 		$arr = mysqli_fetch_assoc($row);
-		echo "<input type='submit' name='friend' value='".$arr['username']."' class='btn btn-primary btn-block'><hr>";		
+		if ($arr['mobilenumber']!=$_SESSION['mobilenumber']) {
+			echo "<input type='submit' name='friend' value='".$arr['username']."' class='btn btn-primary btn-block'><hr>";
+		}		
 	}else{
 		echo "This number doesn't have an account";
 	}
