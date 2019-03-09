@@ -1,0 +1,2 @@
+# Friendami
+The Chat Application
