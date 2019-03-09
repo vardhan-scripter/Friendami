@@ -11,7 +11,9 @@ $conn = mysqli_connect('localhost','root','','chatapplication') or die('could no
 	$query = "select * from ".$_SESSION['mobilenumber']."_chat where username='".$_SESSION['friend']."' and time='".$date."' and status='receive'";
 	$row = mysqli_query($conn,$query);
 	if(mysqli_num_rows($row) > 0){
-		?><script type="text/javascript">
+		?>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript">
 			$('#chat').load('chattingagain.php'); 
 		</script><?php
 	}
