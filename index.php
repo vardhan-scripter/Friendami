@@ -27,11 +27,11 @@
                         Get started with
                     </span>
 
-                    <a href="login.php" class="btn-face m-b-20">
+                    <a href="./Controls/login.php" class="btn-face m-b-20">
                         SignIn
                     </a>
 
-                    <a href="register.php" class="btn-google m-b-20">
+                    <a href="./Controls/register.php" class="btn-google m-b-20">
                         SignUp
                     </a>
                 </form>
